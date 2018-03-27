@@ -20,5 +20,19 @@ var app = app || {};
     return template(this);
   };
 
+  Book.loadAll = rows => {
+    rows.sort((a,b) => b.title-a.title)
+    rows.forEach(bookObj => Book.all.push(new Book(bookObj)))
+  }
+
+  Book.fetchAll = () => {
+    $.getJSON('/data/books.json')
+      .then(
+        function(data) {
+          Book.loadAll(data);
+        }
+      )
+  }
+
   module.Book = Book;
 })(app);
