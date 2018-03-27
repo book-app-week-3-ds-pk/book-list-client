@@ -22,15 +22,15 @@ var app = app || {};
 
   Book.loadAll = rows => {
     rows.sort((a,b) => b.title-a.title)
-    rows.forEach(bookObj => Book.all.push(new Book(bookObj)))
+    rows.forEach(rows => Book.all.push(new Book(rows)))
   }
 
-  Book.fetchAll = () => {
+  Book.fetchAll = callback => {
     $.getJSON('/data/books.json')
-      .then(
-        function(data) {
-          Book.loadAll(data);
-        }
+      .then(results => {
+        Book.loadAll(results);
+        callback();
+      }
       )
   }
 
