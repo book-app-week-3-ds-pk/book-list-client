@@ -1,6 +1,7 @@
 'use strict'
 
 var app = app || {};
+let API_URL = 'http://localhost:3000';
 
 (function(module) {
 
@@ -26,12 +27,12 @@ var app = app || {};
   }
 
   Book.fetchAll = callback => {
-    $.getJSON('/data/books.json')
+    $.get(`${API_URL}/api/v1/books`)
       .then(results => {
         Book.loadAll(results);
         callback();
-      }
-      )
+      })
+      .catch(app.errorView.errorCallback);
   }
 
   module.Book = Book;

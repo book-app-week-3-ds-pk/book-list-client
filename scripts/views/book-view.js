@@ -1,5 +1,14 @@
-(function(module){var bookView={};
+'use strict'
+
+var app = app || {};
+
+(function(module){
+  var bookView={};
   bookView.initIndexPage= function(){$('.book-view').hide()
-    Book.all.map(()=>{$('#book-list').append(this)})
-  }}
-$(Document).ready(Book.fetchall(bookView.initIndexPage());)(app);
+    module.Book.all.map(book => {$('#book-view').append(book.toHtml())})
+  }
+
+  module.bookView = bookView;
+})(app);
+
+$(document).ready(app.Book.fetchAll(app.bookView.initIndexPage));
