@@ -35,5 +35,22 @@ let API_URL = 'http://localhost:3000';
       .catch(app.errorView.errorCallback);
   }
 
+  Book.fetchOne = callback => {
+    $.get(`${API_URL}/api/v1/books/:id`)
+      .then(results => {
+        Book.loadAll(results);
+        callback();
+      })
+      .catch(app.errorView.errorCallback);
+  }
+
+  Book.create = callback => {
+    $.post(`${API_URL}/api/v1/books`, {author: this.author, title: this.title, isbn: this.isbn, image_url: this.image_url, description: this.description })
+      .then(data => {
+        console.log(data);
+        if (callback) callback();
+      })
+  }
+
   module.Book = Book;
 })(app);
