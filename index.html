@@ -12,14 +12,11 @@
   <link rel="stylesheet" href="styles/modules.css">
   <script type="text/x-handlebars-template" id="book-list-template">
     <li class="book-items" data-bookid={{book_id}}>
-      <div class="book-container">
-        <img src={{image_url}}>
-        <div class ="book-overlay">
-          <h3>{{title}}</h3>
-          <p>{{author}}</p>
-          <p class="detail-button"><a href="/books/{{book_id}}">view details</a><p>
+        <img src={{image_url}} class='coverImg'>
+      <div class ="book-overlay">
+          <h3>{{author}}</h3>
+          <p>{{title}}</p>
         </div>
-      </div>
     </li>
   </script>
 </head>
@@ -27,12 +24,19 @@
   <header>
     <h1>Books App</h1>
   </header>
-  <section id="book-view">
+  <div class="backsplash">
+    <h1>my books</h1>
+  
+    <section id="book-view">
 
-  </section>
-  <section id="about-view">
+    </section>
+    <section id="about-view">
 
-  </section>
+    </section>
+    <footer>
+      <p>logos go here</p>
+    </footer>
+  </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
   <script src="scripts/models/book.js"></script>
