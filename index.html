@@ -19,18 +19,10 @@
         </div>
     </li>
   </script>
-  <script type="text/x-handlebars-template" id='detail-template-view'>
- <h1 id='book-title'>{{title}}</h1>
- <h2 id='author'>{{author}}</h2>
- <h2>isbn {{isbn}}</h2>
-    <img src={{image_url}} class='cover-image'>
-    <p id='#description'></p> read more
-  </script>
 </head>
 <body>
   <header>
-    <h1>Books App</h1>
-    <link rel='hamburger menu' class='icon-home3'></link> 
+    <h1>books app <link rel='hamburger menu' class='icon-menu'></link></h1>
   </header>
   <div class="backsplash">
     <h1>my books</h1>
@@ -55,7 +47,10 @@
     </section>
   </div>
   <footer>
-      <p>logos go here</p>
+    <table><tr>
+      <td><a id='twitter'class='icon-twitter3'></div></td>
+      <td><a id='github'class='icon-github'></div></td>
+    </tr></table>
     </footer>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
@@ -63,7 +58,5 @@
   <script src="scripts/views/error-view.js"></script>
   <script src="scripts/views/book-view.js"></script>
   <script src="scripts/views/routes.js"></script>
-
-
 </body>
 </html>
