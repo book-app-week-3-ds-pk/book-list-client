@@ -22,4 +22,7 @@ line-height:400%;
     text-decoration:underline;
 }
 #form-view button{right:0px;
-float:right;}
+}
+header link{
+    display:block;
+}

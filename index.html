@@ -19,10 +19,18 @@
         </div>
     </li>
   </script>
+  <script type="text/x-handlebars-template" id='detail-template-view'>
+ <h1 id='book-title'>{{title}}</h1>
+ <h2 id='author'>{{author}}</h2>
+ <h2>isbn {{isbn}}</h2>
+    <img src={{image_url}} class='cover-image'>
+    <p id='#description'></p> read more
+  </script>
 </head>
 <body>
   <header>
     <h1>Books App</h1>
+    <link rel='hamburger menu' class='icon-home3'></link> 
   </header>
   <div class="backsplash">
     <h1>my books</h1>
