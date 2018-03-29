@@ -2,10 +2,10 @@ body {
   background-color: beige;
   width: 80%;
   margin: auto;
+  height:100%;
 }
-
-header {
-  background-color: grey;
+html{height:100%;}
+header {  background-color: grey;
   height: 80px;
   line-height: 80px;
   padding-left: 50px;

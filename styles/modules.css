@@ -1,0 +1,28 @@
+#form-view{
+    width:90%;
+    margin:auto;
+    height:90%;
+    display:block;
+}
+#form-view input{
+    width:95%;
+    margin-bottom:10px;
+    line-height: 200%;
+    color:gray;
+    border-radius: 4px;
+}
+#form-view #input-description{
+line-height:400%;
+}
+#form-view p{
+    margin-bottom:5%;
+}
+#form-view h1{
+    margin-bottom:5%;
+    text-decoration:underline;
+}
+#form-view button{right:0px;
+}
+header link{
+    display:block;
+}
