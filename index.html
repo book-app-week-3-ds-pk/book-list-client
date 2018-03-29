@@ -11,18 +11,31 @@
   <link rel="stylesheet" href="styles/layout.css">
   <link rel="stylesheet" href="styles/modules.css">
   <script type="text/x-handlebars-template" id="book-list-template">
-    <li class="book-items" data-bookid={{book_id}}>
+    <li class="book-items">
         <img src={{image_url}} class='coverImg'>
       <div class ="book-overlay">
           <h3>{{title}}</h3>
           <p>{{author}}</p>
+          <p class="detail-button"><a href="/books/{{book_id}}">view details</a><p></p>
         </div>
     </li>
   </script>
+  <script type="text/x-handlebars-template" id="book-detail-template">
+    <div class="book-container" data-bookid={{book_id}}>
+      <h3>{{title}}</h3>
+      <p>{{author}}</p>
+      <p>{{isbn}}</p>
+      <img src={{image_url}}>
+      <p>{{description}}</p>
+    </div>
+  </script>
 </head>
 <body>
+<body>
   <header>
-    <h1>books app <link rel='hamburger menu' class='icon-menu'></link></h1>
+    <h1>Books App</h1>
+    <link rel='hamburger menu' class='icon-home3'></link>
+    <a href='/books/new'>New</a>
   </header>
   <div class="backsplash">
     <h1>my books</h1>
@@ -34,16 +47,18 @@
 
     </section>
     <section id="detail-view">
-
+      <h1>test</h1>
     </section>
     <section id="form-view">
-<p>add a new book</p>
-<input type='text'placeholder='title'>
-<input type="text"placeholder='author'>
-<input type='text'placeholder='isbn'>
-<input type='text'placeholder='image url'>
-<input type='text'placeholder='description...' id='input-description'>
-<button type='button'>submit</button>
+      <p>add a new book</p>
+      <form id="create-form">
+        <input type='text' id="book-title" placeholder='title'>
+        <input type="text" id="book-author" placeholder='author'>
+        <input type='text' id="isbn" placeholder='isbn'>
+        <input type='text' id="image_url" placeholder='image url'>
+        <input type='text' id="description" placeholder='description...'>
+        <button type='submit'>submit</button>
+      </form>
     </section>
   </div>
   <footer>
@@ -54,6 +69,7 @@
     </footer>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+  <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
   <script src="scripts/models/book.js"></script>
   <script src="scripts/views/error-view.js"></script>
   <script src="scripts/views/book-view.js"></script>
