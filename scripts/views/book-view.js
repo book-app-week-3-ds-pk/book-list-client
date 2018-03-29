@@ -4,7 +4,9 @@ var app = app || {};
 
 (function(module){
   var bookView={};
+
   bookView.initIndexPage= function(){
+    $('#book-view').empty();
     $('#book-view').show();
     $('#about-view').hide();
     $('#detail-view').hide();
@@ -12,11 +14,14 @@ var app = app || {};
     module.Book.all.map(book => {$('#book-view').append(book.toHtml())})
   }
 
-  bookView.initDetailView = function(){
+  bookView.initDetailView = book => {
+    $('#detail-view').empty();
     $('#book-view').hide();
     $('#about-view').hide();
     $('#detail-view').show();
     $('#form-view').hide();
+    console.log(book);
+    $('#detail-view').append(book.detailHtml());
   }
 
   bookView.initAboutView=function(){
