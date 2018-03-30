@@ -26,6 +26,18 @@ let API_URL = 'http://localhost:3000';
     return template(this);
   }
 
+  Book.prototype.insertBook = function(callback) {
+    $.post(`${API_URL}/api/v1/books`, {
+      title: this.title,
+      author: this.author,
+      isbn: this.isbn,
+      image_url: this.image_url,
+      description: this.description})
+      .then(callback);
+    page('/');
+    console.log('Going to serverland');
+  }
+
   Book.loadAll = rows => {
     rows.sort((a,b) => b.title-a.title)
     rows.forEach(rows => Book.all.push(new Book(rows)))
@@ -36,8 +48,10 @@ let API_URL = 'http://localhost:3000';
       .then(results => {
         Book.loadAll(results);
         callback();
+      },
+      function(err) {
+        console.error(err);
       })
-      .catch(app.errorView.errorCallback);
   }
 
   Book.fetchOne = (ctx, callback) => {
@@ -52,13 +66,17 @@ let API_URL = 'http://localhost:3000';
       })
   }
 
-
-  Book.create = callback => {
-    $.post(`${API_URL}/api/v1/books`, {author: this.author, title: this.title, isbn: this.isbn, image_url: this.image_url, description: this.description })
-      .then(data => {
-        console.log(data);
-        if (callback) callback();
-      })
+  Book.create = (event) => {
+    event.preventDefault();
+    let book = new Book({
+      title: $('#book-title').val(),
+      author: $('#book-author').val(),
+      isbn: $('#isbn').val(),
+      image_url: $('#image_url').val(),
+      description: $('#description').val()
+    })
+    console.log(book);
+    book.insertBook();
   }
 
   module.Book = Book;

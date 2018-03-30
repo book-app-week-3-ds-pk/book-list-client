@@ -35,6 +35,7 @@ var app = app || {};
     $('#about-view').hide();
     $('#detail-view').hide();
     $('#form-view').show();
+    $('#create-form').on('submit', app.Book.create);
   }
 
   module.bookView = bookView;
