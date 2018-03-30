@@ -34,6 +34,7 @@ let API_URL = 'http://localhost:3000';
       image_url: this.image_url,
       description: this.description})
       .then(callback);
+    page('/');
     console.log('Going to serverland');
   }
 
@@ -47,8 +48,10 @@ let API_URL = 'http://localhost:3000';
       .then(results => {
         Book.loadAll(results);
         callback();
+      },
+      function(err) {
+        console.error(err);
       })
-      .catch(app.errorView.errorCallback);
   }
 
   Book.fetchOne = (ctx, callback) => {
