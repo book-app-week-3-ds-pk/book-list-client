@@ -1,3 +1,14 @@
+html{height:100%;}
+header {  background-color: grey;
+  height: 80px;
+  line-height: 80px;
+  padding-left: 50px;
+}
+header h1{
+  display:block;
+}
+header link{display:block;
+}
 body {
   background-color: beige;
   width: 80%;
@@ -5,17 +16,10 @@ body {
   height:100%;
   font-family:Lucida Console;
 }
-
-html{height:100%;}
-header {  background-color: grey;
-  height: 80px;
-  line-height: 80px;
-  padding-left: 50px;
-}
-
 .backsplash {
   background-color: khaki;
   margin:auto;
+  height:calc(100% - 160px);
 }
 
 .backsplash h1 {
@@ -28,21 +32,19 @@ li {
   list-style: none;
   margin-bottom: 30px;
 }
-.book-items{
-  width:90%;
-  margin:auto;
-}
-.coverImg{
-  position: relative;
-  top:0px;
-  margin:auto;
-}
 
-.book-overlay {margin:auto;
+
+
+footer {
   background-color: grey;
-  color: lightgray;
-  position: relative;
-  top:-38px;
-  font-size:18px;
+  height: 80px;
+  text-align: right;
+  font-size:24px;
+  position:absolute;
+  bottom:0px;
+  width:80%;
 }
-
+.icon-menu{float:right;
+    font-size:48px;
+    margin:auto;
+}

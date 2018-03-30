@@ -19,22 +19,31 @@
 }
 #form-view button{right:0px;
 }
-header link{display:block;
-}
-.icon-menu{float:right;
-    font-size:48px;
-    margin:auto;
-}
 footer table{
     float:right;
     margin-top:5%;
 }
-footer {
+.book-items{
+    width:90%;
+    margin:auto;
+  }
+  
+  .coverImg{
+    position: relative;
+    top:0px;
+    margin:auto;
+  }
+  
+  .book-overlay {margin:auto;
     background-color: grey;
-    height: 80px;
-    text-align: right;
-    font-size:24px;
+    color: lightgray;
+    position: relative;
+    top:-38px;
+    font-size:18px;
   }
 footer td{
     margin-left:10px
   }
+  #about-us-contents{
+    margin-top:15px;
+}
